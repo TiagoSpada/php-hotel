@@ -39,6 +39,34 @@
         ],
 
     ];
-
-    var_dump($hotels);
+    // stampa dell'array
+    // var_dump($hotels); 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hotel Disponibili:</h1>
+    <ul>
+        <!-- foreach per ciclare gli hotel -->
+        <?php foreach($hotels as $hotel): ?> 
+        <li>
+            <ul>
+                <li> <h2><?php echo $hotel['name']; ?>  </h2> </li>
+                <li> <div> <?php echo $hotel['description']; ?> </div> </li>
+                <li> <div> parcheggio compreso:<?php echo $hotel['parking'] ? 'si' : 'no'; ?> </div> </li>
+                <li> <div> voto: <?php echo $hotel['vote']; ?>/5 </div> </li>
+                <li> <div> distanza dal centro: <?php echo $hotel['distance_to_center']; ?>km </div> </li>
+            </ul>
+        </li>
+        <!-- chiusura foreach (}) -->
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>
